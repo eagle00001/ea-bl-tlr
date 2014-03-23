@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    
+    <!-- httpclient 服务类 -->
+    <bean id="poolClientConnectionMgr"
+          class="org.apache.http.impl.conn.PoolingClientConnectionManager">
+         <property name="maxTotal" value="100"></property>
+    </bean>
+    <!-- httpclient 服务类 -->
+    <bean id="httpClientRequestService"
+          class="com.ea.tlr.http.impl.HttpClientServiceImpl">
+         <property name="poolClientConnectionMgr" ref="poolClientConnectionMgr"></property>
+    </bean>
+    
+</beans>

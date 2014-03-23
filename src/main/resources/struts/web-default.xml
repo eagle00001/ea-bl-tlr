@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="web-default" extends="struts-default" abstract="true">
+        <result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+        
+        <interceptors>
+            <!-- <interceptor name="SessionBridgeInterceptor" class="com.yihaodian.productDetail.action.interceptor.SessionBridgeInterceptor" /> -->
+			<interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>	
+			<interceptor-stack name="globalSimplePageStack">
+		      <interceptor-ref name="params">
+		      	  <param name="excludeParams">.*\\u0023.*</param>
+		      </interceptor-ref>
+	     	</interceptor-stack>
+        </interceptors>
+        
+        <!-- <global-results>
+            <result name="login" type="redirect">
+				/tologin.do?returnUrl=${returnUrl}
+            </result>
+        </global-results> -->
+        <default-interceptor-ref name="globalSimplePageStack"></default-interceptor-ref>
+    </package>
+    
+</struts>

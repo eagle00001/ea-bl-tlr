@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Lottery">
+    <typeAlias type="com.ea.tlr.lottery.vo.Lottery" alias="lottery" />
+    
+    <resultMap id="lotteryResult" class="lottery">
+	    <result column="id" property="id" />
+	    <result column="date" property="date"/>
+	    <result column="type" property="type"/>
+	    <result column="serial_number" property="serialNumber"/>
+	    <result column="lottery_number" property="lotteryNumber"/>
+	    <result column="create_time" property="createTime"/>
+  	</resultMap>
+  	
+  	<insert id="saveLottery" parameterClass="lottery">
+    		insert into lottery 
+    		(date,type,serial_number,lottery_number) 
+    		values (#date#,#type#,#serialNumber#,#lotteryNumber#)
+    </insert>
+  	
+    
+    <select id="getSscLotteryByDate" parameterClass="map" resultMap="lotteryResult">
+	   select id as id ,date,type,serial_number ,lottery_number,create_time from lottery  where 
+	   date &gt;= #startDate# and  date &lt; #endDate# order by date,serial_number
+    </select>
+    
+</sqlMap>

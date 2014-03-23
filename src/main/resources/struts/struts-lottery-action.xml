@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="lottery" namespace="/lottery" extends="web-default">
+		
+		<action name="ssc"
+			class="com.ea.tlr.lottery.action.SscLotteryAction" method="importHistoryDatas">
+			<result name="error" type="json">
+				<param name="root">jsonResult</param>
+			</result>
+			<result name="success" type="json">
+				<param name="root">jsonResult</param>
+			</result>
+		</action>
+		
+		<action name="lineChart"
+			class="com.ea.tlr.lottery.action.SscLotteryAction" method="createLineChartReport">
+			<result name="error" type="json">
+				<param name="root">jsonResult</param>
+			</result>
+			<result name="success" type="json">
+				<param name="root">jsonResult</param>
+			</result>
+		</action>
+		
+		<action name="analyseData"
+			class="com.ea.tlr.lottery.action.SscLotteryAction" method="analyseHistoryDatas">
+			<result name="error" type="json">
+				<param name="root">jsonResult</param>
+			</result>
+			<result name="success" type="json">
+				<param name="root">jsonResult</param>
+			</result>
+		</action>
+	</package>
+	    
+</struts>

@@ -1,0 +1,15 @@
+时时彩:
+http://www.888707.com/fangfa.html
+
+时时彩数据采集：
+http://data.shishicai.cn/cqssc/haoma/2013-11-22/
+post
+http://data.shishicai.cn/handler/kuaikai/data.ashx?lottery=4&date=2013-11-22
+
+
+//导入时时彩数据
+http://localhost/lottery/ssc.do?startDate=2013-01-01&endDate=2013-12-01
+//分析时时彩统计数据
+http://localhost/lottery/analyseData.do?startDate=2013-01-01&endDate=2013-12-01
+//生成时时彩曲线报表
+http://localhost/lottery/lineChart.do?startDate=2013-01-01&endDate=2013-12-01
